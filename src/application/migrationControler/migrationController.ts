@@ -1,7 +1,8 @@
-import PopulationBusiness from '../business/migrationBusiness/populationBusiness';
-import TableSchemaBusiness from '../business/migrationBusiness/tableSchemaBusiness';
-import DataBase from '../services/DataBase';
+import PopulationBusiness from '../../business/migrationBusiness/populationBusiness';
+import TableSchemaBusiness from '../../business/migrationBusiness/tableSchemaBusiness';
+import DataBase from '../../services/DataBase';
 
+/* It's a class that creates a table schema and populates it with data */
 export class MigrationController extends DataBase {
   public async startMigration(){
     try {

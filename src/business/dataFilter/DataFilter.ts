@@ -1,8 +1,6 @@
-import UsersData from '../../data/UsersData/UsersData';
-import {Request} from 'express';
-import {userModel, userModelDatabase} from '../../model/userModel';
-import MessageErrorsController from '../../application/errorsControllers/MessageErrorsController';
+import {userModelDatabase} from '../../model/userModel';
 
+/* It takes an array of objects and returns an array of objects with the same data but with different */
 export default class DataFilter {
   public async userPropertyNameHandler(arrayOfData: userModelDatabase[]): Promise<any>{
     let temporaryObjArray;
@@ -22,5 +20,4 @@ export default class DataFilter {
     }
     return temporaryObjArray;
   }
-
 }
