@@ -20,7 +20,7 @@ export default class UsersBusiness {
     if (!emailRegex.test(userEmail)) throw new Error('invalidParamterForEmail');
     if (!(userPhoneNumber.length === 11)) throw new Error('invalidPhoneNumber');
 
-    const databaseQuery = await new UsersData().insertNewUsersProducts(userName, userEmail, userBirthday, userPhoneNumber);
+    const databaseQuery = await new UsersData().insertNewUsers(userName, userEmail, userBirthday, userPhoneNumber);
     return databaseQuery;
   }
 }

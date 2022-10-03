@@ -1,7 +1,11 @@
-import UsersBusiness from '../business/UserBusiness/UserBusiness';
+import UsersBusiness from '../../business/UserBusiness/UserBusiness';
 import {Request, Response} from 'express';
-import DataBase from '../services/DataBase';
-import MessageErrorsController from './errorsControllers/MessageErrorsController';
+import DataBase from '../../services/DataBase';
+import MessageErrorsController from '../errorsControllers/MessageErrorsController';
+
+/* This class is a controller for the Users table in the database. It has two methods: getUsersList and
+insertNewUsers. The getUsersList method gets a list of users from the database and sends it to the
+client. The insertNewUsers method inserts a new user into the database */
 
 export class UsersController extends DataBase {
   async getUsersList(resp: Response){
@@ -40,5 +44,4 @@ export class UsersController extends DataBase {
     }
     return;
   }
-
 }
