@@ -1,4 +1,4 @@
-import DataBase from '../../services/DataBase';
+import DataBase from '../../services/dataBase';
 
 export default class UsersData extends DataBase {
   async getUsersList(){

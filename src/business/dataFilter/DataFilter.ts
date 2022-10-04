@@ -9,7 +9,7 @@ export default class DataFilter {
         return {
           userName: user.user_name,
           userEmail: user.user_email,
-          userBirthday: user.user_birthday,
+          userBirthday: user.user_birthday.toISOString().split('T')[0],
           userPhoneNumber: user.user_phone_number
         };
       });

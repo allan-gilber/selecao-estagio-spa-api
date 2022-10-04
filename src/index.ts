@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import {UsersController} from './application/usersController/usersController';
-import app from './business/applicationBusiness/ApplicationLogic';
+import app from './business/applicationBusiness/applicationLogic';
 
 
 // GET
