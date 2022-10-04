@@ -1,7 +1,7 @@
 {
-  "name": "template-node-js-repo",
+  "name": "selecao-estagio-spa-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple API for retrieving list of registered users",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allan-gilber/template-node-js-repo.git"
+    "url": "git+https://github.com/allan-gilber/selecao-estagio-spa-api"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/allan-gilber/template-node-js-repo/issues"
+    "url": "https://github.com/allan-gilber/selecao-estagio-spa-api/issues"
   },
-  "homepage": "https://github.com/allan-gilber/template-node-js-repo#readme",
+  "homepage": "https://github.com/allan-gilber/selecao-estagio-spa-api#readme",
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/dotenv": "^8.2.0",
