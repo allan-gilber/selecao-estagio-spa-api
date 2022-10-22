@@ -1,4 +1,4 @@
-# Simples User Management API
+# Simple User Management API
 
 API created for storing a list of users in incremental order.
 
