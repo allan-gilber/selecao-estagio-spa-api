@@ -13,7 +13,7 @@ export default class UsersBusiness {
 
     const {userName, userEmail, userBirthday, userPhoneNumber}: any = req.body;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+    console.log(!userName , userName.length <= 3 , !userEmail , userBirthday , !userPhoneNumber);
     if (!userName || userName.length <= 3 || !userEmail || !userBirthday || !userPhoneNumber) throw new Error('emptyParamtersForNewUser');
     if (!Date.parse(userBirthday) || userBirthday.length === 11) throw new Error('invalidParamterForBirthday');
     if (!emailRegex.test(userEmail)) throw new Error('invalidParamterForEmail');
