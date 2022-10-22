@@ -12,8 +12,8 @@ export class UsersController extends DataBase {
     try {
       const usersList = await new UsersBusiness().getUserList();
 
-      resp.statusCode = 201;
-      resp.send({data: usersList});
+      resp.statusCode = 200;
+      resp.send(usersList);
     } catch (error: any){
       const errorMessage = new MessageErrorsController().getErrorMessage(error?.code || error?.message);
       resp.statusCode = errorMessage.status;
