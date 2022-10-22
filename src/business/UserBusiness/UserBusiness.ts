@@ -2,10 +2,13 @@ import UsersData from '../../data/usersData/usersData';
 import {Request} from 'express';
 import DataFilter from '../dataFilter/dataFilter';
 export default class UsersBusiness {
+
   public async getUserList(): Promise<any>{
     const databaseQuery = await new UsersData().getUsersList();
     console.log(databaseQuery);
     const parsedData = new DataFilter().userPropertyNameHandler(databaseQuery);
+    console.clear();
+    console.log('parsedData', parsedData);
     return parsedData;
   }
 
