@@ -2,7 +2,6 @@ import {Request, Response} from 'express';
 import {UsersController} from './application/usersController/usersController';
 import app from './business/applicationBusiness/applicationLogic';
 
-
 // GET
 /* Simple endpoint to verify if server is online */
 app.get('/', (req: Request,res: Response) => res.status(200).send({message: 'server online.'}));
