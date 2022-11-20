@@ -1,7 +1,7 @@
-import UsersTableData from '../../data/migrationData/tablesSchema/usersTableData';
+import RocketsTableData from '../../data/migrationData/tablesSchema/RocketsTableData';
 
 export default class TableSchemaBusiness {
-  public async createUsersTableSchema(){
-    return await new UsersTableData().createUsersTable();
+  public async createRocketsTableSchema(){
+    return await new RocketsTableData().createRocketsTable();
   }
 }
