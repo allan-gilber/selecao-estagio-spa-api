@@ -25,8 +25,12 @@ export class AxiosServices {
 
     return await this.getBlockOfLaunchData().then(async (firstData: any) => {
       this.actualPage++;
+      this.totalPages = firstData.totalPages;
       this.arrayOfLaunchsData.push(firstData);
-      return Promise.all(await this.requestAlLRemainingLaunchData());
+      return Promise.all(await this.requestAlLRemainingLaunchData()).then(a => {console.log('terminou333');
+        console.log('dsadas', this.arrayOfLaunchsData);
+        return a;
+      });
     });
   }
 
@@ -35,7 +39,7 @@ export class AxiosServices {
       console.log('rodou', this.actualPage, this.totalPages, this.actualPage < this.totalPages);
       const dataRequest: any = this.getBlockOfLaunchData();
       console.log('nextpage', dataRequest.hasNextPage);
-      if (dataRequest.hasNextPage) this.loopControler = false;
+      if (!dataRequest.hasNextPage) this.loopControler = false;
       this.arrayOfLaunchsData.push(dataRequest);
     } while (this.loopControler);
     return this.arrayOfLaunchsData;
@@ -43,7 +47,6 @@ export class AxiosServices {
 
   private async getBlockOfLaunchData(){
     const body = {
-      'query': {},
       'options': {
         LIMIT: this.LIMIT,
         offset: this.LIMIT * this.actualPage
@@ -56,7 +59,7 @@ export class AxiosServices {
       }
       const convertedData = Promise.all(response.data.docs.map((launch: any) => {
         const parsers = new DatabaseParser();
-        return parsers.launchDataPropertyNameHandler(launch).then((objArray: any) => parsers.stringifyArraysFields(objArray).then((objArray: any) => parsers.convertBooleanToString(objArray)) );
+        return parsers.launchDataPropertyNameHandler(launch).then((objArray: any) => parsers.stringifyArraysFields(objArray).then((objArray: any) => parsers.convertBooleanToString(objArray)));
       }));
       return convertedData;
     });
