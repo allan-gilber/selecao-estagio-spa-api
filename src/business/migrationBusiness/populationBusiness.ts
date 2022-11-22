@@ -5,4 +5,8 @@ export default class PopulationBusiness {
   public async populateRocketsTable(){
     return await new RocketsTableData().populateRocketsTable();
   }
+
+  public async populateLaunchsTable(){
+    return await new RocketsTableData().populateLaunchsTable();
+  }
 }
