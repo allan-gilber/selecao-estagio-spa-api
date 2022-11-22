@@ -1,8 +1,9 @@
+export interface errorMessageObject {
+    [key: string]: errorMessage | externalErrorMessage
+}
 export interface errorMessage {
-    status: number
     message: string
 }
-
-export interface errorMessageObject {
-    [key: string]: errorMessage
+export interface externalErrorMessage extends errorMessage{
+    status: number
 }
